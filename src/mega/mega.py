@@ -1,22 +1,22 @@
-import math
-import time
-import humanize
+import os
 import re
 import json
-import logging
-import secrets
-from pathlib import Path
-import hashlib
-from Crypto.Cipher import AES
-from Crypto.PublicKey import RSA
-from Crypto.Util import Counter
-import os
+import math
+import time
 import random
-import binascii
-import tempfile
 import shutil
 import asyncio
 import requests
+import humanize
+import logging
+import secrets
+import hashlib
+import binascii
+import tempfile
+from pathlib import Path
+from Crypto.Cipher import AES
+from Crypto.PublicKey import RSA
+from Crypto.Util import Counter
 from pyrogram.errors import FloodWait, MessageNotModified
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from tenacity import retry, wait_exponential, retry_if_exception_type
@@ -956,12 +956,10 @@ class Mega:
         n : node we're moving
         t : id of target parent node, moving to
         i : request id
-
         targets
         2 : root
         3 : inbox
         4 : trash
-
         or...
         target's id
         or...
